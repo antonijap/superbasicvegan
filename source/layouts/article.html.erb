@@ -5,8 +5,8 @@
     <div class="row align-center">
       <div class="columns">
         <%= partial 'partials/header' %>
-        <h2 class="post_title"><%= current_article.title %></h2>
-        <img src="<%= current_article.data.featured_image %>" alt="<%= current_article.title %>" class="margin-bottom">
+        <h2 class="post_title"><%= current_page.data.title %></h2>
+        <img src="<%= current_article.data.featured_image %>" alt="<%= current_page.data.title  %>" class="margin-bottom">
         <%= yield %>
         <%= partial 'partials/footer' %>
       </div>
