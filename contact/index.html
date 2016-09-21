@@ -40,16 +40,22 @@
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sed obcaecati voluptatum, natus nulla ad! Quod voluptate pariatur nihil ipsum quia? Inventore quam enim est at quas quibusdam. Qui, neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sed obcaecati voluptatum, natus nulla ad! Quod voluptate pariatur nihil ipsum quia? Inventore quam enim est at quas quibusdam. Qui, neque.
 </p>
 
-<form>
+<form action="https://formspree.io/your@email.com" method="POST">
+    <input type="text" name="name">
+    <input type="email" name="_replyto">
+    <input type="submit" value="Send">
+</form>
+
+<form action="https://formspree.io/superbasicvegan@gmail.com" method="POST">
   <div class="row">
     <div class="medium-6 columns">
       <label>First Name
-        <input type="text">
+        <input type="text" name="name">
       </label>
     </div>
-    <div class="medium-6 columns">
-      <label>Last Name
-        <input type="text">
+		<div class="medium-6 columns">
+      <label>Email
+        <input type="text" name="_replyto">
       </label>
     </div>
 		<div class="small-12 columns">
@@ -58,7 +64,9 @@
 			</label>
     </div>
 		<div class="small-12 columns">
-      <button class="expanded secondary button">Send Message</button>
+			<input type="hidden" name="_subject" value="Website Contact" />
+			<input type="text" name="_gotcha" style="display:none" />
+			<input type="submit" value="Send Message" class="expanded secondary button">
     </div>
   </div>
 </form>
