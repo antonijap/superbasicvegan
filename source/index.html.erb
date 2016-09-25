@@ -1,10 +1,10 @@
 ---
-title: Homepage
+title: Home
 ---
 <div class="row">
 	<div class="columns">
 		<p class="intro">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sed obcaecati voluptatum, natus nulla ad! Quod voluptate pariatur nihil ipsum quia? Inventore quam enim est at quas quibusdam. Qui, neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sed obcaecati voluptatum, natus nulla ad! Quod voluptate pariatur nihil ipsum quia? Inventore quam enim est at quas quibusdam. Qui, neque.
+			No budget? No blender? No problem! You want to become a vegan but are afraid that you don't have what it takes (meaning money, residence in tropical climate and expensive kitchen gadgets)? Well believe it or not it is possible! If I can do it, so can you!
 		</p>
 	</div>
 </div>
@@ -12,7 +12,7 @@ title: Homepage
 	<div class="columns">
 		<% blog.articles.each do |article| %>
 		<article>
-			<img src="http://lorempixel.com/900/600/food">
+			<img src="<%= article.data.thumbnail_image %>">
 			<h2>
 				<a href="<%= article.url %>"><%= article.title %></a>
 			</h2>
@@ -22,18 +22,18 @@ title: Homepage
 				<div class="shrink columns">
 					<a href="<%= article.url %>" class="hollow button">Read more</a>
 				</div>
-				<div class="shrink columns">
+				<div class="shrink columns margin-top">
 					<div class="sharing">
-						<a class="sharer social-button facebook" data-sharer="facebook" data-url="<%= article.url %>">
+						<a class="sharer social-button facebook" data-sharer="facebook" data-url="<%= baseurl %><%= article.url %>">
 							<span class="ion-social-facebook"></span>
 						</a>
-						<a class="sharer social-button twitter" data-sharer="twitter" data-title="<%= article.title %>" data-hashtags="<%= article.data.hashtags %>" data-url="<%= article.url %>">
+						<a class="sharer social-button twitter" data-sharer="twitter" data-title="<%= article.title %>" data-hashtags="<%= article.data.hashtags %>" data-url="<%= baseurl %><%= article.url %>">
 							<span class="ion-social-twitter"></span>
 						</a>
-						<a class="sharer social-button whatsapp" data-sharer="whatsapp" data-title="<%= article.title %>"" data-url="<%= article.url %>">
+						<a class="sharer social-button whatsapp" data-sharer="whatsapp" data-title="<%= article.title %>"" data-url="<%= baseurl %><%= article.url %>">
 							<span class="ion-social-whatsapp"></span>
 						</a>
-						<a class="sharer social-button email" data-sharer="email" data-title="<%= article.title %>"" data-url="<%= article.url %>" data-subject="Hey! Check out that URL" data-to="some@email.com">
+						<a class="sharer social-button email" data-sharer="email" data-title="<%= article.title %>"" data-url="<%= baseurl %><%= article.url %>" data-subject="Hey! Check out that URL" data-to="some@email.com">
 							<span class="ionicons ion-at"></span>
 						</a>
 					</div>

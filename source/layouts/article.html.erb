@@ -5,10 +5,35 @@
     <div class="row align-center">
       <div class="columns">
         <%= partial 'partials/header' %>
-        <h2 class="post_title"><%= current_page.data.title %></h2>
-        <img src="<%= current_article.data.featured_image %>" alt="<%= current_page.data.title  %>" class="margin-bottom">
-        <%= yield %>
+        <div class="row">
+          <div class="columns">
+            <h2 class="post_title"><%= current_page.data.title %></h2>
+            <article>
+              <img src="<%= current_article.data.featured_image %>" alt="<%= current_page.data.title  %>" class="margin-bottom">
+              <%= yield %>
+            </article>
+            <div class="row align-middle align-justify">
+      				<div class="columns text-center">
+      					<div class="article-sharing">
+      						<a class="sharer social-button facebook" data-sharer="facebook" data-url="<%= baseurl %><%= current_page.url  %>">
+      							<span class="ion-social-facebook"></span>
+      						</a>
+      						<a class="sharer social-button twitter" data-sharer="twitter" data-title="<%= current_page.title %>" data-hashtags="<%= current_page.data.hashtags %>" data-url="<%= baseurl %><%= current_page.url %>">
+      							<span class="ion-social-twitter"></span>
+      						</a>
+      						<a class="sharer social-button whatsapp" data-sharer="whatsapp" data-title="<%= current_page.title %> data-url="<%= baseurl %><%= current_page.url  %>">
+      							<span class="ion-social-whatsapp"></span>
+      						</a>
+      						<a class="sharer social-button email" data-sharer="email" data-title="<%= current_page.title %> data-url="<%= baseurl %><%= current_page.url  %>" data-subject="Hey! Check out that URL" data-to="some@email.com">
+      							<span class="ionicons ion-at"></span>
+      						</a>
+      					</div>
+      				</div>
+      			</div>
+          </div>
+        </div>
         <%= partial 'partials/footer' %>
+        <%= partial 'partials/analytics' %>
       </div>
     </div>
   </body>

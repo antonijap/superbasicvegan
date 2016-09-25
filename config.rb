@@ -20,7 +20,7 @@ page '/*.txt', layout: false
 
 # Reload the browser automatically whenever files change
 configure :development do
-  # activate :livereload
+  activate :livereload
 end
 
 activate :blog do |blog|
@@ -41,11 +41,11 @@ activate :directory_indexes
 ###
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def baseurl
+    "http://superbasicvegan.com"
+  end
+end
 
 # Build-specific configuration
 configure :build do
@@ -61,6 +61,7 @@ activate :deploy do |deploy|
   # Optional Settings
   deploy.remote   = 'git@github.com:superbasicvegan/superbasicvegan.git' # remote name or git url, default: origin
   deploy.branch   = 'gh-pages' # default: gh-pages
+  deploy.user     = 'superbasicvegan'
   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
 end

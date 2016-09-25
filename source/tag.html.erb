@@ -13,7 +13,7 @@ title: Category
       <div class="columns">
         <% page_articles.each_with_index do |article| %>
         <article>
-          <img src="http://lorempixel.com/900/600/food">
+          <img src="<%= article.data.thumbnail_image %>">
           <h2>
             <a href="<%= article.url %>"><%= article.title %></a>
           </h2>
